@@ -13,11 +13,9 @@ func main() {
 	// create factory
 	factory := NewNotifierFactory()
 
-	// based on notification type send notification
 	notificationType := "SMS"
-	notifier, err := factory.GetNotifier(notificationType)
+	err := factory.Notify(notificationType, "msg sent")
 	if err != nil {
 		fmt.Printf("error getting notifier %v", err)
 	}
-	notifier.send("")
 }
